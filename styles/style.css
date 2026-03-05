@@ -43,8 +43,10 @@
     margin-bottom: 20px;
   }
   
-  h1 span {
-    color: #38bdf8;
+.text-gradiante{
+    background: linear-gradient(90deg, #3B82F6 0%, #22C55E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   .descricao {
@@ -53,10 +55,10 @@
   }
   
   .botao-principal {
-    padding: 12px 25px;
+    padding: 12px 35px;
     border: none;
     border-radius: 8px;
-    background-color: #38bdf8;
+    background: linear-gradient(90deg, #3B82F6 0%, #22C55E 100%) ;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -90,6 +92,7 @@
   /* GRADE */
   
   .grade-categorias {
+    margin-top: 70px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -126,4 +129,47 @@
     color: #38bdf8;
     text-decoration: none;
     font-weight: bold;
+  }
+
+
+
+
+
+  .footer{
+    margin-top: 80px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #020617;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg,#38bdf8,#22c55e,#ec4899) 1;
+  }
+  
+  .footer-conteudo{
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .footer-titulo{
+    color: #94a3b8;
+    margin-bottom: 15px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  
+  .footer-autores{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .footer-autores span{
+    color: #e2e8f0;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  
+  .footer-autores span:hover{
+    color: #38bdf8;
+    transform: translateY(-2px);
   }
