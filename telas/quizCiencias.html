@@ -6,44 +6,59 @@
     <link rel="stylesheet" href="../styles/styleTelaPerguntas.css">
 </head>
 <body>
+
 <header class="titulo">
+    <div class="voltar"><img src="../imgs/imgV.png" alt=""></div>
     <h3>Programação Web Quiz</h3>
+
 </header>
 
 <div class="container">
     <div class="quiz-box">
-    <div class="pergunta"><h3>Nos computadores modernos existe um componente responsável por executar cálculos, interpretar
-        instruções e coordenar o funcionamento das demais partes do sistema. Esse componente é conhecido
-        pela sigla CPU. O que essa sigla significa?</h3></div>
-    <div class="opcoes">
-        <button class="a">
-            <img src="imgA.png" alt="">
-            É o desenvolvimento de sistemas que funcionam na internet, como sites e aplicações web.
-        </button>
-        <button class="b">
-            <img src="imgB.png" alt="">
-            É a criação de peças físicas de hardware para computadores.
-        </button>
-        <button class="c">
-            <img src="imgC.png" alt="">
-           É o estudo exclusivo de redes elétricas e energia.
-        </button>
 
-        <button class="d">
-            <img src="imgD.png" alt="">
-            É um tipo de programação usado apenas para jogos offline.
-        </button>
+    <div class="pergunta">
+        <img id="pontuacao" src="../imgs/imgP.png" alt="">
+        <h3>Nos computadores modernos existe um componente responsável por executar cálculos, interpretar
+          instruções e coordenar o funcionamento das demais partes do sistema. Esse componente é conhecido
+          pela sigla CPU. O que essa sigla significa?</h3></div>
+    <div class="opcoes">
+      <button class="a">
+        <img src="../imgs/imgA.png" alt="">
+        Central Processing Unit
+    </button>
+    <button class="b">
+        <img src="../imgs/imgB.png" alt="">
+        Computer Personal Unit
+    </button>
+    <button class="c">
+        <img src="../imgs/imgC.png" alt="">
+        Central Print Unit
+    </button>
+    <button class="d">
+        <img src="../imgs/imgD.png" alt="">
+        Control Program Utility
+    </button>
     </div>
         <button class="proxima">Próxima Questão</button>
     </div>
 
+    
     <div class="estatisticas">
         <h3>Quiz Estatísticas</h3>
-        <p>Pontuação: 0</p>
-        <p>Tempo: 00:00</p>
-        <p>Progresso: 1/5</p>
-        <p>Posição: 0</p>
+        <p>
+          Pontuação <br>
+          <span id="estPontuacao">0</span>
+        </p>
+        <p>
+          Tempo <br>
+          <span id="estTempo"><img src="../imgs/imgR.png" class="imgTemp">  00:00</span>
+        </p>
+        <p>
+          Progresso <br>
+          <span id="estProgresso">1/5</span>
+        </p>
     </div>
+    
 
 </div>
 
