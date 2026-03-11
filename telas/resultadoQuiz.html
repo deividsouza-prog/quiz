@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
     <title>Resultado do Quiz</title>
-</head>
-<body>
-    <h1>Calma homi, estou fazendo ainda</h1>
-</body>
+    <link rel="stylesheet" href="../styles/styleResultado.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="resultado-card">
+        <div class="icone">🏆</div>
+
+        <h1>Quiz Finalizado!</h1>
+
+        <p class="subtitulo">Veja como você se saiu:</p>
+
+        <div class="pontuacao-area">
+          <span id="pontuacaoNumero">0</span>
+          <span class="total">/ 5</span>
+        </div>
+
+        <div class="barra">
+          <div class="progresso" id="barraProgresso"></div>
+        </div>
+
+        <p id="mensagemResultado" class="mensagem"></p>
+
+        <a href="../telas/index.html" class="botao-voltar">
+          Voltar para todas as categorias →
+        </a>
+      </div>
+    </div>
+
+    <script>
+      let pontos = localStorage.getItem("pontuacaoQuiz") || 3;
+
+      document.getElementById("pontuacaoNumero").innerText = pontos;
+
+      let porcentagem = (pontos / 5) * 100;
+
+      document.getElementById("barraProgresso").style.width = porcentagem + "%";
+
+      let mensagem = "";
+
+      if (pontos == 5) {
+        mensagem = "Excelente! Você acertou tudo! 🚀";
+      } else if (pontos >= 4) {
+        mensagem = "Muito bem! Você teve um ótimo desempenho! 👏";
+      } else if (pontos >= 3) {
+        mensagem = "Bom trabalho! Continue praticando. 👍";
+      } else {
+        mensagem = "Não desista! Tente novamente e melhore sua pontuação. 📚";
+      }
+
+      document.getElementById("mensagemResultado").innerText = mensagem;
+    </script>
+  </body>
 </html>
