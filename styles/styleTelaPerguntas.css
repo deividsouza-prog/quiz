@@ -133,6 +133,18 @@
     font-size: 18px;
     color: #FFFFFF;
   }
+  .ativo{
+    display: block;
+  }
+  .inativo{
+    display: none;
+  }
   
+  .correta{
+    background-color: green;
+  }
   
+  .errada{
+    background-color: red;
+  }
   
