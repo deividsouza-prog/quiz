@@ -1,8 +1,10 @@
 //Função troca de pergunta
 const quizBoxes = document.querySelectorAll(".quiz-box");
 const botoesProxima = document.querySelectorAll(".proxima");
+const pontuacao = document.querySelector(".estPontuacao")
 
 let indiceAtual = 0;
+let pontos = 0;
 
 botoesProxima.forEach((botao) => {
   botao.addEventListener("click", () => {
@@ -44,6 +46,8 @@ quizBoxes.forEach((box) => {
       // verifica se é correta
       if (botao.dataset.correta) {
         botao.classList.add("correta");
+        pontos = pontos + 20;
+        pontuacao.innerText = pontos;
       } else {
         botao.classList.add("errada");
       }
@@ -53,3 +57,42 @@ quizBoxes.forEach((box) => {
   });
 
 });
+
+// Mostrar em qual questao voce esta
+const valorQuestao = document.querySelector(".valor");
+
+let index = 1; 
+valorQuestao.innerText = index;
+
+botoesProxima.forEach((botao) => {
+  botao.addEventListener('click', () => {
+      index++;
+      if(index > 5){
+        valorQuestao.innerText = 5
+      }else{
+        valorQuestao.innerText = index;
+      }
+  });
+});
+
+// Cronometro
+let totalSegundos = 0;
+let intervalo;
+
+function formatarTempo() {
+    let minutos = Math.floor(totalSegundos / 60);
+    let segundos = totalSegundos % 60;
+
+    document.querySelector(".temporizador").innerText = `${minutos}:${segundos}`;
+}
+
+function iniciar() {
+    if (intervalo) return; 
+
+    intervalo = setInterval(() => {
+        totalSegundos++;
+        formatarTempo();
+    }, 1000);
+}
+
+iniciar();
