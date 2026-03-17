@@ -17,7 +17,7 @@
 
         <div class="pontuacao-area">
           <span id="pontuacaoNumero">0</span>
-          <span class="total">/ 5</span>
+          <span class="total" id="pontosResultado">/ 100</span>
         </div>
 
         <div class="barra">
@@ -31,28 +31,27 @@
         </a>
       </div>
     </div>
-
     <script>
-      let pontos = localStorage.getItem("pontuacaoQuiz") || 3;
-
-      document.getElementById("pontuacaoNumero").innerText = pontos;
-
-      let porcentagem = (pontos / 5) * 100;
-
-      document.getElementById("barraProgresso").style.width = porcentagem + "%";
+      let pontosR = localStorage.getItem("pontuacao") || 0;
+      pontosR = parseInt(pontosR);
 
       let mensagem = "";
 
-      if (pontos == 5) {
+      if (pontosR == 100) {
         mensagem = "Excelente! Você acertou tudo! 🚀";
-      } else if (pontos >= 4) {
+      } else if (pontosR >= 60) {
         mensagem = "Muito bem! Você teve um ótimo desempenho! 👏";
-      } else if (pontos >= 3) {
+      } else if (pontosR >= 30) {
         mensagem = "Bom trabalho! Continue praticando. 👍";
       } else {
         mensagem = "Não desista! Tente novamente e melhore sua pontuação. 📚";
       }
 
+      let porcentagem = pontosR;
+
+      // Atualiza tela
+      document.getElementById("pontuacaoNumero").innerText = pontosR;
+      document.getElementById("barraProgresso").style.width = porcentagem + "%";
       document.getElementById("mensagemResultado").innerText = mensagem;
     </script>
   </body>

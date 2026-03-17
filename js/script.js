@@ -13,6 +13,7 @@ botoesProxima.forEach((botao) => {
       botao.innerText = "Finalizar Quiz";
 
       botao.onclick = () => {
+        localStorage.setItem("pontuacao", pontos);
         window.location.href = "resultadoQuiz.html";
       };
 
