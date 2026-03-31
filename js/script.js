@@ -3,11 +3,13 @@ const quizBoxes = document.querySelectorAll(".quiz-box");
 const botoesProxima = document.querySelectorAll(".proxima");
 const pontuacao = document.querySelector(".estPontuacao")
 
+
 let indiceAtual = 0;
 let pontos = 0;
 
 botoesProxima.forEach((botao) => {
   botao.addEventListener("click", () => {
+    console.log(quizBoxes)
     if (indiceAtual == quizBoxes.length - 1) {
 
       botao.innerText = "Finalizar Quiz";
@@ -41,7 +43,7 @@ quizBoxes.forEach((box) => {
 
       // desativa apenas as opções da pergunta atual
       opcoes.forEach((b) => {
-        b.disabled = true;
+        b.disabled = false;
       });
 
       // verifica se é correta
